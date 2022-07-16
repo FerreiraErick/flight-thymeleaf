@@ -11,10 +11,10 @@ import java.util.List;
 public class Flight {
 
     @Id
-    private Integer id;
+    private Double id;
     @OneToOne
     private Aircraft aircraft;
-    @ManyToOne
+    @OneToMany
     private List<Passenger> passengerList;
     @Column
     private LocalTime flightTime;
@@ -29,11 +29,11 @@ public class Flight {
 
     }
 
-    public Integer getId() {
+    public Double getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Double id) {
         this.id = id;
     }
 

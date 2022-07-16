@@ -1,11 +1,12 @@
 package com.thymeleafexample.repository;
 
 import com.thymeleafexample.model.Flight;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public interface FlightRepository {
+public interface FlightRepository extends JpaRepository<Flight, Double> {
 
     static List<Flight> getFlights() {
 
