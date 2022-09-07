@@ -18,16 +18,16 @@
         <table class="table table-bordered col-6">
             <thead>
                 <tr>
-                    <th>Flight Id</th>
                     <th>Air Plane</th>
                     <th>Flight Date</th>
+                    <th>Flight Time</th>
                     <th>Destination From</th>
                     <th>Destination To</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="flight : ${flights}">
-                    <td th:text="${flight.airPlane}"></td>
+                    <td th:text="${flight.aircraft}"></td>
                     <td th:text="${flight.flightDate}"></td>
                     <td th:text="${flight.flightTime}"></td>
                     <td th:text="${flight.destinationFrom}"></td>

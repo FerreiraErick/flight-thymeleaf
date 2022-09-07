@@ -1,33 +1,30 @@
 package com.thymeleafexample.model;
 
-import org.hibernate.annotations.CollectionId;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-@Entity
+@Entity(name = "TB_FLIGHT")
 public class Flight {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "ID")
     private Double id;
-    @OneToOne
+    @OneToOne()
+    @JoinColumn(name = "AIRCRAFT_ID")
     private Aircraft aircraft;
-    @OneToMany
-    private List<Passenger> passengerList;
-    @Column
+    @Column(name = "FLIGHT_TIME")
     private LocalTime flightTime;
-    @Column
+    @Column(name = "FLIGHT_DATE")
     private LocalDate flightDate;
-    @Column
+    @Column(name = "DESTINATION_FROM")
     private String destinationFrom;
-    @Column
+    @Column(name = "DESTINATION_TO")
     private String destinationTo;
 
-    public Flight() {
-
-    }
+    public Flight() { }
 
     public Double getId() {
         return id;
@@ -43,14 +40,6 @@ public class Flight {
 
     public void setAircraft(Aircraft aircraft) {
         this.aircraft = aircraft;
-    }
-
-    public List<Passenger> getPassengerList() {
-        return passengerList;
-    }
-
-    public void setPassengerList(List<Passenger> passengerList) {
-        this.passengerList = passengerList;
     }
 
     public LocalTime getFlightTime() {

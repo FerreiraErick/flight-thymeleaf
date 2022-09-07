@@ -17,10 +17,6 @@ public class HomeController {
     @GetMapping()
     public String getHome(Model model){
 
-        List<Flight> flightList = FlightRepository.getFlights();
-
-        model.addAttribute("flights", flightList);
-
         return "index";
 
     }
