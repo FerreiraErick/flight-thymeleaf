@@ -1,4 +1,4 @@
-package com.thymeleafexample.model;
+package com.thymeleafexample.model.entity;
 
 import javax.persistence.*;
 
@@ -9,8 +9,8 @@ public class Aircraft {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
     private Integer id;
-    @Column(name = "AIRCRAFT_SERIAL_NUMBER")
-    private String airCraftSerialNumber;
+    @Column(name = "AIRCRAFT")
+    private String aircraftId;
 
 
     public Integer getId() {
@@ -21,11 +21,11 @@ public class Aircraft {
         this.id = id;
     }
 
-    public String getAirCraftSerialNumber() {
-        return airCraftSerialNumber;
+    public String getAircraftId() {
+        return aircraftId;
     }
 
-    public void setAirCraftSerialNumber(String airCraftSerialNumber) {
-        this.airCraftSerialNumber = airCraftSerialNumber;
+    public void setAircraftId(String aircraftId) {
+        this.aircraftId = aircraftId;
     }
 }

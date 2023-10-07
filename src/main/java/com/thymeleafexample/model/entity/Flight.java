@@ -1,9 +1,8 @@
-package com.thymeleafexample.model;
+package com.thymeleafexample.model.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
 @Entity(name = "TB_FLIGHT")
 public class Flight {
@@ -12,8 +11,8 @@ public class Flight {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
     private Double id;
-    @OneToOne()
-    @JoinColumn(name = "AIRCRAFT_ID")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "AIRCRAFT_ID", referencedColumnName = "ID")
     private Aircraft aircraft;
     @Column(name = "FLIGHT_TIME")
     private LocalTime flightTime;

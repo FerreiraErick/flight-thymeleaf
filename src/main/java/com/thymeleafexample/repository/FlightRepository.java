@@ -1,6 +1,6 @@
 package com.thymeleafexample.repository;
 
-import com.thymeleafexample.model.Flight;
+import com.thymeleafexample.model.entity.Flight;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.ArrayList;

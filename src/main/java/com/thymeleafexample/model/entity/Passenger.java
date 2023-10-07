@@ -1,19 +1,18 @@
-package com.thymeleafexample.model;
+package com.thymeleafexample.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+@Entity(name = "TB_PASSENGER")
 public class Passenger {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column
+    @Column(name = "NAME")
     private String name;
-    @Column
-    private String document;
-    @Column
+    @Column(name = "CPF")
+    private String cpf;
+    @Column(name = "AGE")
     private Integer age;
 
 
@@ -33,12 +32,12 @@ public class Passenger {
         this.name = name;
     }
 
-    public String getDocument() {
-        return document;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setDocument(String document) {
-        this.document = document;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public Integer getAge() {

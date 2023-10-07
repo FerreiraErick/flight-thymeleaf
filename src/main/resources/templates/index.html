@@ -27,7 +27,7 @@
             </thead>
             <tbody>
                 <tr th:each="flight : ${flights}">
-                    <td th:text="${flight.aircraft}"></td>
+                    <td th:text="${flight.aircraft.aircraftId}"></td>
                     <td th:text="${flight.flightDate}"></td>
                     <td th:text="${flight.flightTime}"></td>
                     <td th:text="${flight.destinationFrom}"></td>
