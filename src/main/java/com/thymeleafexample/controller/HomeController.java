@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 public class HomeController {
     @Autowired
     private FetchFlightDataInterface fetchFlightDataInterface;
 
-    @GetMapping()
+    @GetMapping
     public ModelAndView getHome(ModelAndView model){
         model.addObject("flights", fetchFlightDataInterface.fetch());
         model.setViewName("/index.html");
