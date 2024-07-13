@@ -10,7 +10,7 @@ public class BaseController {
 
     @GetMapping
     public String getHome(){
-        return "redirect:/home";
+        return "index.html";
     }
 
 

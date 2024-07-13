@@ -7,35 +7,14 @@
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
-    <nav class="nav justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">My Flights</a>
-        <a class="nav-link" href="#">Cart</a>
-        <a class="nav-link">Logout</a>
-    </nav>
+<nav class="nav justify-content-center">
+    <a class="nav-link active" href="flights.html" th:href="@{/flights}" >Flights</a>
+    <a class="nav-link">Logout</a>
+</nav>
 
-    <div class="container-fluid row">
-        <table class="table table-bordered col-6">
-            <thead>
-                <tr>
-                    <th>Air Plane</th>
-                    <th>Flight Date</th>
-                    <th>Flight Time</th>
-                    <th>Destination From</th>
-                    <th>Destination To</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="flight : ${flights}">
-                    <td th:text="${flight.aircraft.aircraftId}"></td>
-                    <td th:text="${flight.flightDate}"></td>
-                    <td th:text="${flight.flightTime}"></td>
-                    <td th:text="${flight.destinationFrom}"></td>
-                    <td th:text="${flight.destinationTo}"></td>
-                </tr>
-            </tbody>
-        </table>
-
+    <div class="container-fluid col-6" >
+        <label for="flights_upload" class="btn btn-success" >Load Flights</label>
+        <input id="flights_upload" class="btn btn-success" type="file" accept="text/csv" name="Load flights"/>
     </div>
 </body>
 
