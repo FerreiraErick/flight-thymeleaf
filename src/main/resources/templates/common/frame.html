@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="frame" class="container-fluid row">
+    <div class="col-1">
+        <div th:replace="~{common/side-bar :: sidebar}" >
+
+        </div>
+    </div>
+    <div class="container-fluid col">
+        <div th:replace="~{common/header :: header}">
+
+        </div>
+    </div>
+</div>
+</html>

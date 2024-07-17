@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="sidebar">
+
+    <div class="container border border-top-0 border-bottom-0 border-start-0 border-secondary  ">
+        <div class="d-flex justify-content-center p-3" >
+            <img src="../static/img/logo.png" width="50px" height="50px">
+        </div>
+        <ul class="nav nav-pills nav-fill flex-column pt-3" >
+            <li class="nav-item">
+                <a class="nav-link active" href="flights.html" th:href="@{/flights}" >Flights</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</html>
