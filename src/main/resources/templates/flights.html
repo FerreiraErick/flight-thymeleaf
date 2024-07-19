@@ -7,42 +7,42 @@
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
-<nav class="nav justify-content-center">
-    <a class="nav-link active" href="home.html" th:href="@{/}" >Home</a>
-    <a class="nav-link">Logout</a>
-</nav>
+    <div class="container-fluid row m-0 p-0">
+        <div class="container-fluid col-1 p-0 m-0">
+            <div th:replace="~{common/side-bar :: sidebar}" >
 
-<div class="container-fluid row p-4">
-    <div class="container col">
-        <table class="table table-bordered table-striped col-6">
-            <thead>
-            <tr class="table-primary" >
-                <th>Air Plane</th>
-                <th>Flight Date</th>
-                <th>Flight Time</th>
-                <th>Destination From</th>
-                <th>Destination To</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="table-success" th:each="flight : ${flights}">
-                <td th:text="${flight.aircraft.aircraftId}"></td>
-                <td th:text="${flight.flightDate}"></td>
-                <td th:text="${flight.flightTime}"></td>
-                <td th:text="${flight.destinationFrom}"></td>
-                <td th:text="${flight.destinationTo}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="container col">
+            </div>
+        </div>
+        <div class="container-fluid col p-0 m-0">
+            <div th:replace="~{common/header :: header}">
 
+            </div>
+            <div class="container col">
+                <table class="table table-bordered table-striped col-6">
+                    <thead>
+                    <tr class="table-primary" >
+                        <th>Air Plane</th>
+                        <th>Flight Date</th>
+                        <th>Flight Time</th>
+                        <th>Destination From</th>
+                        <th>Destination To</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-success" th:each="flight : ${flights}">
+                        <td th:text="${flight.aircraft.aircraftId}"></td>
+                        <td th:text="${flight.flightDate}"></td>
+                        <td th:text="${flight.flightTime}"></td>
+                        <td th:text="${flight.destinationFrom}"></td>
+                        <td th:text="${flight.destinationTo}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container col">
+
+            </div>
+        </div>
     </div>
-</div>
 </body>
-
 </html>
-
-<style>
-
-</style>
