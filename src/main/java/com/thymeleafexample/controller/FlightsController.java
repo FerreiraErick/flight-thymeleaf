@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/home")
-public class HomeController {
+@RequestMapping("/flights")
+public class FlightsController {
     @Autowired
     private FetchFlightDataInterface fetchFlightDataInterface;
 
     @GetMapping
     public ModelAndView getHome(ModelAndView model){
         model.addObject("flights", fetchFlightDataInterface.fetch());
-        model.setViewName("/index.html");
+        model.setViewName("/flights.html");
         return model;
     }
 

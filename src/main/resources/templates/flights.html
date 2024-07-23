@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fly-Away</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div class="container-fluid row m-0 p-0">
+        <div class="container-fluid col-1 p-0 m-0">
+            <div th:replace="~{common/side-bar :: sidebar}" >
+
+            </div>
+        </div>
+        <div class="container-fluid col p-0 m-0">
+            <div th:replace="~{common/header :: header}">
+
+            </div>
+            <div class="container col">
+                <table class="table table-bordered table-striped col-6">
+                    <thead>
+                    <tr class="table-primary" >
+                        <th>Air Plane</th>
+                        <th>Flight Date</th>
+                        <th>Flight Time</th>
+                        <th>Destination From</th>
+                        <th>Destination To</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-success" th:each="flight : ${flights}">
+                        <td th:text="${flight.aircraft.aircraftId}"></td>
+                        <td th:text="${flight.flightDate}"></td>
+                        <td th:text="${flight.flightTime}"></td>
+                        <td th:text="${flight.destinationFrom}"></td>
+                        <td th:text="${flight.destinationTo}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container col">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
