@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="header" class="container-fluid bg-primary col p-0 m-0" style="height: 50px;">
+
+
+    <div th:fragment="header (header_name)" class="container-fluid bg-primary col p-0 m-0" style="height: 50px;">
+        <h2 th:text="${header_name}"></h2>
+
+        <style>
+            h2 {
+                color: white;
+                padding: 5px;
+                padding-left: 20px;
+            }
+        </style>
     </div>
+
 
 </html>
