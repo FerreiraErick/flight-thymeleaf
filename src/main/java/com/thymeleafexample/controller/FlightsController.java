@@ -10,13 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/flights")
 public class FlightsController {
+
     @Autowired
     private FetchFlightDataInterface fetchFlightDataInterface;
 
     @GetMapping
     public ModelAndView getHome(ModelAndView model){
         model.addObject("flights", fetchFlightDataInterface.fetch());
-        model.setViewName("/flights.html");
+        model.setViewName("view_flights/flights.html");
         return model;
     }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Fly-Away</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}">
     <script th:src="@{/js/bootstrap.min.js}"></script>
 </head>
 <body>
@@ -14,10 +14,10 @@
             </div>
         </div>
         <div class="container-fluid col p-0 m-0">
-            <div th:replace="~{common/header :: header}">
+            <div th:replace="~{common/header :: header(${'Lista de Voos'})}">
 
             </div>
-            <div class="container col">
+            <div class="container col m mt-5">
                 <table class="table table-bordered table-striped col-6">
                     <thead>
                     <tr class="table-primary" >

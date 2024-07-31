@@ -13,6 +13,11 @@ public class BaseController {
         return "home.html";
     }
 
+    @GetMapping("/include/pilot")
+    public String getIncludePilot() {
+        return "/view_include_pilot/include_pilot.html";
+    }
+
     @GetMapping("/login")
     public String getLogin() {
         return "login.html";
