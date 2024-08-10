@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fly-Away</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="d-flex flex-row">
+    <div th:replace="~{common/side-bar :: sidebar}" ></div>
+    <div class="container-fluid col">
+        <div th:replace="~{common/header :: header(${'Incluir Voo'})}"></div>
+        <div class="container m mt-5">
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-select" aria-label="default_select" id="aircraft">
+                <label for="aircraft">Aeronave</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-select" aria-label="default_select" id="pilot">
+                <label for="pilot">Piloto</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-select" aria-label="default_select" id="origin">
+                <label for="origin">Origem</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-select" aria-label="default_select" id="destination">
+                <label for="destination">Destino</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="date" class="form-select" aria-label="default_select" id="dt_rise">
+                <label for="dt_rise">Data de Saída</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="date" class="form-select" aria-label="default_select" id="dt_arrive">
+                <label for="dt_arrive">Data de Chegada</label>
+            </div>
+
+            <div class="container d-flex justify-content-center">
+                <button type="button" class="btn btn-warning">Incluir</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
