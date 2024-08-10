@@ -18,6 +18,16 @@ public class BaseController {
         return "/view_include_pilot/include_pilot.html";
     }
 
+    @GetMapping("/include/aircraft")
+    public String getIncludeAircraft() {
+        return "/view_include_aircraft/include_aircraft.html";
+    }
+
+    @GetMapping("/include/flight")
+    public String getIncludeFlight() {
+        return "/view_include_flight/include_flight.html";
+    }
+
     @GetMapping("/login")
     public String getLogin() {
         return "login.html";
