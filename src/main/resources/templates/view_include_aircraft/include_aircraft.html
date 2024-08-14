@@ -12,23 +12,23 @@
     <div th:replace="~{common/side-bar :: sidebar}" ></div>
     <div class="container-fluid col">
         <div th:replace="~{common/header :: header(${'Incluir Aeronave'})}"></div>
-        <div class="container m mt-5">
+        <form class="container m mt-5" method="POST" th:action="@{/include/aircraft}" th:object="${aircraft}">
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-control" id="aircraf_model" placeholder="XYZ">
-                <label for="aircraf_model">Modelo</label>
+                <input type="text" class="form-control" id="aircraft_model" th:field="*{aircraftModel}" placeholder="XYZ">
+                <label for="aircraft_model">Modelo</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-control" id="aircraft_id" placeholder="12345">
+                <input type="text" class="form-control" id="aircraft_id" th:field="*{aircraftId}" placeholder="12345">
                 <label for="aircraft_id">Identificador</label>
             </div>
 
             <div class="container d-flex justify-content-center">
-                <button type="button" class="btn btn-warning">Incluir</button>
+                <button type="submit" class="btn btn-warning">Incluir</button>
             </div>
 
-        </div>
+        </form>
     </div>
 </div>
 </body>
