@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fly-Away</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="d-flex flex-row">
+    <div th:replace="~{common/side-bar :: sidebar}" ></div>
+    <div class="container-fluid col">
+        <div th:replace="~{common/header :: header(${'Incluir Aeronave'})}"></div>
+        <form class="container m mt-5" method="POST" th:action="@{/include/aircraft}" th:object="${aircraft}">
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-control" id="aircraft_model" th:field="*{aircraftModel}" placeholder="XYZ">
+                <label for="aircraft_model">Modelo</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-control" id="aircraft_brand" th:field="*{aircraftBrand}" placeholder="12345">
+                <label for="aircraft_brand">Fabricante</label>
+            </div>
+
+            <div class="form-floating mb-3 col-3">
+                <input type="text" class="form-control" id="aircraft_badge" th:field="*{aircraftBadge}" placeholder="ZZZ-999">
+                <label for="aircraft_badge">Identificador</label>
+            </div>
+
+            <div class="container d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning">Incluir</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
