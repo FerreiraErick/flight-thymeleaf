@@ -1,15 +1,18 @@
 package com.thymeleafexample.controller;
 
-<<<<<<< Updated upstream
-=======
+
 import com.thymeleafexample.model.dto.AircraftDTO;
-import com.thymeleafexample.model.entity.Aircraft;
 import com.thymeleafexample.service.FlightComponentsRepositoryServiceInterface;
 import lombok.RequiredArgsConstructor;
->>>>>>> Stashed changes
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/")
@@ -28,8 +31,6 @@ public class BaseController {
         return "/view_include_pilot/include_pilot.html";
     }
 
-<<<<<<< Updated upstream
-=======
     @GetMapping("/include/aircraft")
     public ModelAndView getIncludeAircraft(ModelAndView modelAndView) {
         modelAndView.getModelMap().addAttribute("aircraft", new AircraftDTO());
@@ -53,8 +54,6 @@ public class BaseController {
     }
 
 
-
->>>>>>> Stashed changes
     @GetMapping("/login")
     public String getLogin() {
         return "login.html";
