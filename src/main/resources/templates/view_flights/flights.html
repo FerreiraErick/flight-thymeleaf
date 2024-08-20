@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                     <tr class="table-success" th:each="flight : ${flights}">
-                        <td th:text="${flight.aircraft.aircraftId}"></td>
+                        <td th:text="${flight.aircraftEntity.aircraftId}"></td>
                         <td th:text="${flight.flightDate}"></td>
                         <td th:text="${flight.flightTime}"></td>
                         <td th:text="${flight.destinationFrom}"></td>

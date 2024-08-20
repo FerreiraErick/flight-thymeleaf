@@ -13,7 +13,7 @@ public class Flight {
     private Double id;
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "AIRCRAFT_ID", referencedColumnName = "ID")
-    private Aircraft aircraft;
+    private AircraftEntity aircraftEntity;
     @Column(name = "FLIGHT_TIME")
     private LocalTime flightTime;
     @Column(name = "FLIGHT_DATE")
@@ -33,12 +33,12 @@ public class Flight {
         this.id = id;
     }
 
-    public Aircraft getAircraft() {
-        return aircraft;
+    public AircraftEntity getAircraft() {
+        return aircraftEntity;
     }
 
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
+    public void setAircraft(AircraftEntity aircraftEntity) {
+        this.aircraftEntity = aircraftEntity;
     }
 
     public LocalTime getFlightTime() {

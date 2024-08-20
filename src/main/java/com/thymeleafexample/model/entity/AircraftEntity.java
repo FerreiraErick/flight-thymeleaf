@@ -9,24 +9,24 @@ import javax.persistence.*;
 @Entity(name = "TB_AIRCRAFT")
 @Data
 @Builder
-public class Aircraft {
+public class AircraftEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "AIRCRAFT_ID")
     private Long id;
     @Column(name = "AIRCRAFT_BRAND")
-    private String aircraftBrand;
+    private String brand;
     @Column(name = "AIRCRAFT_MODEL")
-    private String aircraftModel;
+    private String model;
     @Column(name = "AIRCRAFT_BADGE")
-    private String aircraftBadge;
+    private String badge;
 
-    public static Aircraft buildEntity(AircraftDTO aircraft) {
-        return Aircraft.builder()
-                .aircraftBrand(aircraft.getAircraftBrand())
-                .aircraftModel(aircraft.getAircraftModel())
-                .aircraftBadge(aircraft.getAircraftBadge())
+    public static AircraftEntity buildEntity(AircraftDTO aircraft) {
+        return AircraftEntity.builder()
+                .brand(aircraft.getAircraftBrand())
+                .model(aircraft.getAircraftModel())
+                .badge(aircraft.getAircraftBadge())
                 .build();
     }
 

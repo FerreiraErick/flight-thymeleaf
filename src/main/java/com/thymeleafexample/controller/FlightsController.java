@@ -8,17 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/flights")
+@RequestMapping("/flight")
 public class FlightsController {
 
     @Autowired
     private FetchFlightDataInterface fetchFlightDataInterface;
 
-    @GetMapping
-    public ModelAndView getHome(ModelAndView model){
+    @GetMapping("/flights")
+    public ModelAndView getFlights(ModelAndView model){
         model.addObject("flights", fetchFlightDataInterface.fetch());
         model.setViewName("view_flights/flights.html");
         return model;
     }
+
+//    @GetMapping
+//    public ModelAndView getFlight(ModelAndView modelAndView) {
+//
+//        modelAndView.setViewName("view_include_flight");
+//
+//
+//    }
 
 }
