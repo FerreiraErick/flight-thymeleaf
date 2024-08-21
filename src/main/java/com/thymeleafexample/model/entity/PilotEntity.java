@@ -1,5 +1,6 @@
 package com.thymeleafexample.model.entity;
 
+import com.thymeleafexample.model.dto.PilotDTO;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,15 +14,17 @@ public class PilotEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PILOT_ID")
-    private String id;
+    private Long id;
+    @Column(name = "PILOT_BADGE")
+    private String badge;
     @Column(name = "PILOT_PHONE_NUMBER")
     private String phoneNumber;
     @Column(name = "PILOT_NAME")
     private String name;
 
-    public static PilotEntity buildEntity(PilotEntity pilot) {
+    public static PilotEntity buildEntity(PilotDTO pilot) {
         return PilotEntity.builder()
-                .id(pilot.getId())
+                .badge(pilot.getBadge())
                 .phoneNumber(pilot.getPhoneNumber())
                 .name(pilot.getName())
                 .build();

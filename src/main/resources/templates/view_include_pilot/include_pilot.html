@@ -6,36 +6,60 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
     <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="https://unpkg.com/imask"></script>
+
 </head>
 <body>
 <div class="d-flex flex-row">
     <div th:replace="~{common/side-bar :: sidebar}" ></div>
     <div class="container-fluid col">
         <div th:replace="~{common/header :: header(${'Incluir Piloto'})}"></div>
-        <div class="container m mt-5">
+        <form class="container m mt-5" method="POST" th:action="@{/pilot}" th:object="${pilotDTO}">
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-control" id="pilot_name" placeholder="Fulano de Tal">
+                <input type="text" class="form-control" id="pilot_name" th:field="*{name}" placeholder="Fulano de Tal">
                 <label for="pilot_name">Nome</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-control" id="pilot_id" placeholder="12345">
-                <label for="pilot_id">Identificador</label>
+                <input type="text" class="form-control" id="pilot_id" th:field="*{badge}" placeholder="12345">
+                <label for="pilot_badge">Identificador</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-control" id="pilot_phone_number" placeholder="55+(11)1234-1234">
+                <input type="text" class="form-control" id="pilot_phone_number" th:field="*{phoneNumber}" placeholder="55+(11)1234-1234">
                 <label for="pilot_phone_number">Telefone</label>
             </div>
 
             <div class="container d-flex justify-content-center">
-                <button type="button" class="btn btn-warning">Incluir</button>
+                <button type="submit" class="btn btn-warning">Incluir</button>
             </div>
 
-        </div>
+        </form>
     </div>
 </div>
 </body>
+
+<script>
+
+    // import IMask from 'imask';    
+
+    const maskConfig = [
+        {
+            id: "pilot_phone_number",
+            mask: '(00) 00000-0000'
+        },
+        {
+            id: "pilot_id",
+            mask : '[aaa]-000'
+        }
+    ]
+
+    maskConfig.forEach(element => {
+        const object = document.getElementById(element.id);    
+        IMask(object, element.mask);
+    });
+
+</script>
 
 </html>

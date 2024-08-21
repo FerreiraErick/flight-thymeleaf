@@ -21,12 +21,12 @@ public class FlightsController {
         return model;
     }
 
-//    @GetMapping
-//    public ModelAndView getFlight(ModelAndView modelAndView) {
-//
-//        modelAndView.setViewName("view_include_flight");
-//
-//
-//    }
+    @GetMapping
+    public ModelAndView getFlight(ModelAndView modelAndView) {
+        modelAndView.addObject("flightDTO", new Object());
+        modelAndView.setViewName("/view_include_flight/include_flight.html");
+
+        return modelAndView;
+    }
 
 }

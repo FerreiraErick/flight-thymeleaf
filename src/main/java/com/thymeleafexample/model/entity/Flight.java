@@ -12,7 +12,7 @@ public class Flight {
     @Column(name = "ID")
     private Double id;
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "AIRCRAFT_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "AIRCRAFT_ID", referencedColumnName = "AIRCRAFT_ID")
     private AircraftEntity aircraftEntity;
     @Column(name = "FLIGHT_TIME")
     private LocalTime flightTime;

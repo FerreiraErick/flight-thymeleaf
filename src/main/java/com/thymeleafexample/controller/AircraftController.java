@@ -31,7 +31,7 @@ public class AircraftController {
         modelAndView.getModelMap().addAttribute("aircraft", new AircraftDTO());
         modelAndView.setViewName("/view_include_aircraft/include_aircraft.html");
 
-        flightComponentsRepositoryServiceInterface.buildAircraft(aircraftDTO);
+        flightComponentsRepositoryServiceInterface.createAircraft(aircraftDTO);
 
         return modelAndView;
     }
