@@ -12,43 +12,43 @@
     <div th:replace="~{common/side-bar :: sidebar}" ></div>
     <div class="container-fluid col">
         <div th:replace="~{common/header :: header(${'Incluir Voo'})}"></div>
-        <div class="container m mt-5">
+        <form class="container m mt-5" method="POST" th:action="@{/flight}" th:object="${flight}">
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="aircraftEntity">
-                <label for="aircraftEntity">Aeronave</label>
+                <input type="text" class="form-select" aria-label="default_select" id="aircraft" th:field="*{aircraft}">
+                <label for="aircraft">Aeronave</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="pilot">
+                <input type="text" class="form-select" aria-label="default_select" id="pilot" th:field="*{pilot}">
                 <label for="pilot">Piloto</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="origin">
+                <input type="text" class="form-select" aria-label="default_select" id="origin" th:field="*{origin}">
                 <label for="origin">Origem</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="destination">
+                <input type="text" class="form-select" aria-label="default_select" id="destination" th:field="*{destination}">
                 <label for="destination">Destino</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="date" class="form-select" aria-label="default_select" id="dt_rise">
+                <input type="date" class="form-select" aria-label="default_select" id="dt_rise" th:field="*{riseDate}">
                 <label for="dt_rise">Data de Saída</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="date" class="form-select" aria-label="default_select" id="dt_arrive">
+                <input type="date" class="form-select" aria-label="default_select" id="dt_arrive" th:field="*{arriveDate}">
                 <label for="dt_arrive">Data de Chegada</label>
             </div>
 
             <div class="container d-flex justify-content-center">
-                <button type="button" class="btn btn-warning">Incluir</button>
+                <button type="submit" class="btn btn-warning">Incluir</button>
             </div>
 
-        </div>
+        </form>
     </div>
 </div>
 </body>

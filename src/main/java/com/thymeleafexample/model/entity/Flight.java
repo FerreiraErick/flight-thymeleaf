@@ -1,10 +1,19 @@
 package com.thymeleafexample.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity(name = "TB_FLIGHT")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Flight {
 
     @Id
@@ -23,53 +32,5 @@ public class Flight {
     @Column(name = "DESTINATION_TO")
     private String destinationTo;
 
-    public Flight() { }
 
-    public Double getId() {
-        return id;
-    }
-
-    public void setId(Double id) {
-        this.id = id;
-    }
-
-    public AircraftEntity getAircraft() {
-        return aircraftEntity;
-    }
-
-    public void setAircraft(AircraftEntity aircraftEntity) {
-        this.aircraftEntity = aircraftEntity;
-    }
-
-    public LocalTime getFlightTime() {
-        return flightTime;
-    }
-
-    public void setFlightTime(LocalTime flightTime) {
-        this.flightTime = flightTime;
-    }
-
-    public LocalDate getFlightDate() {
-        return flightDate;
-    }
-
-    public void setFlightDate(LocalDate flightDate) {
-        this.flightDate = flightDate;
-    }
-
-    public String getDestinationFrom() {
-        return destinationFrom;
-    }
-
-    public void setDestinationFrom(String destinationFrom) {
-        this.destinationFrom = destinationFrom;
-    }
-
-    public String getDestinationTo() {
-        return destinationTo;
-    }
-
-    public void setDestinationTo(String destinationTo) {
-        this.destinationTo = destinationTo;
-    }
 }

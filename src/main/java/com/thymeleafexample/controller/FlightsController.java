@@ -1,5 +1,6 @@
 package com.thymeleafexample.controller;
 
+import com.thymeleafexample.model.dto.FlightDTO;
 import com.thymeleafexample.service.FetchFlightDataInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,7 @@ public class FlightsController {
 
     @GetMapping
     public ModelAndView getFlight(ModelAndView modelAndView) {
-        modelAndView.addObject("flightDTO", new Object());
+        modelAndView.addObject("flightDTO", new FlightDTO());
         modelAndView.setViewName("/view_include_flight/include_flight.html");
 
         return modelAndView;

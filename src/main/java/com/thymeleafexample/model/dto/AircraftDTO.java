@@ -1,5 +1,6 @@
 package com.thymeleafexample.model.dto;
 
+import com.thymeleafexample.model.entity.AircraftEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,5 +26,13 @@ public class AircraftDTO {
     @NotEmpty
     @Pattern(regexp = "[A-Z]*-[0-9]*")
     private String aircraftBadge;
+
+    public static AircraftDTO toDTO(AircraftEntity aircraftEntity) {
+        return AircraftDTO.builder()
+                .aircraftBadge(aircraftEntity.getBadge())
+                .aircraftModel(aircraftEntity.getModel())
+                .aircraftBrand(aircraftEntity.getBrand())
+                .build();
+    }
 
 }
