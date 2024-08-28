@@ -1,14 +1,18 @@
 package com.thymeleafexample.model.entity;
 
 import com.thymeleafexample.model.dto.AircraftDTO;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity(name = "TB_AIRCRAFT")
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class AircraftEntity {
 
     @Id

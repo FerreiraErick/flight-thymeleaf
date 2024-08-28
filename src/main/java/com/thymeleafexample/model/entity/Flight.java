@@ -1,13 +1,20 @@
 package com.thymeleafexample.model.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import jakarta.persistence.*;
+
+import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity(name = "TB_FLIGHT")
 @Data
@@ -17,7 +24,7 @@ import java.time.LocalTime;
 public class Flight {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = SEQUENCE)
     @Column(name = "ID")
     private Double id;
     @OneToOne(fetch = FetchType.EAGER)

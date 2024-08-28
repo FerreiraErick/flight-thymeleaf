@@ -12,25 +12,37 @@
     <div th:replace="~{common/side-bar :: sidebar}" ></div>
     <div class="container-fluid col">
         <div th:replace="~{common/header :: header(${'Incluir Voo'})}"></div>
-        <form class="container m mt-5" method="POST" th:action="@{/flight}" th:object="${flight}">
+        <form class="container m mt-5" method="POST" th:action="@{/flight}" th:object="${flightDTO}">
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="aircraft" th:field="*{aircraft}">
+                <select type="text" class="form-select" aria-label="default_select" id="aircraft" th:field="*{aircraft}" >
+                    <option th:value="${null}" selected>Selecione</option>
+                    <option th:each="item : ${flightViewDTO.aircraftList}" th:value="${item.aircraftBadge}" th:text="${item.aircraftBrand} + ' ' + ${item.aircraftBadge}"></option>
+                </select>
                 <label for="aircraft">Aeronave</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="pilot" th:field="*{pilot}">
+                <select type="text" class="form-select" aria-label="default_select" id="pilot" th:field="*{pilot}" >
+                    <option th:value="${null}" selected>Selecione</option>
+                    <option th:each="item : ${flightViewDTO.pilotList}" th:value="${item.badge}" th:text="${item.name} + ' ' + ${item.badge}"></option>
+                </select>
                 <label for="pilot">Piloto</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="origin" th:field="*{origin}">
+                <select type="text" class="form-select" aria-label="default_select" id="origin" th:field="*{origin}" >
+                    <option th:value="${null}" selected>Selecione</option>
+                    <option th:each="item : ${flightViewDTO.origin}" th:value="${item.id}" th:text="${item.shortName}"></option>
+                </select>
                 <label for="origin">Origem</label>
             </div>
 
             <div class="form-floating mb-3 col-3">
-                <input type="text" class="form-select" aria-label="default_select" id="destination" th:field="*{destination}">
+                <select type="text" class="form-select" aria-label="default_select" id="destination" th:field="*{destination}">
+                    <option th:value="${null}" selected>Selecione</option>
+                    <option th:each="item : ${flightViewDTO.destination}" th:value="${item.id}" th:text="${item.shortName}"></option>
+                </select>
                 <label for="destination">Destino</label>
             </div>
 

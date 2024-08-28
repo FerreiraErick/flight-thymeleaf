@@ -1,10 +1,11 @@
 package com.thymeleafexample.model.dto;
 
+import com.thymeleafexample.model.entity.PilotEntity;
 import lombok.*;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Data
 @ToString
@@ -24,5 +25,13 @@ public class PilotDTO {
     @NotNull
     @NotEmpty
     private String name;
+
+    public static PilotDTO toPilotDTO(PilotEntity pilot) {
+        return PilotDTO.builder()
+                .name(pilot.getName())
+                .badge(pilot.getBadge())
+                .phoneNumber(pilot.getPhoneNumber())
+                .build();
+    }
 
 }

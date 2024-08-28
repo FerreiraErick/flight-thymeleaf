@@ -2,6 +2,7 @@ package com.thymeleafexample.service.impl;
 
 import com.thymeleafexample.model.dto.AircraftDTO;
 import com.thymeleafexample.model.dto.FlightDTO;
+import com.thymeleafexample.model.dto.OriginDestinationDTO;
 import com.thymeleafexample.model.dto.PilotDTO;
 import com.thymeleafexample.model.dto.flightscreen.FlightScreenDTO;
 import com.thymeleafexample.model.entity.AircraftEntity;
@@ -41,10 +42,12 @@ public class FlightComponentsRepositoryServiceImpl implements FlightComponentsRe
     @Override
     public FlightScreenDTO fetchFlightScreenData() {
         FlightScreenDTO flightScreenDTO = new FlightScreenDTO();
-        flightScreenDTO.setAircraftList(aircraftRepository.findAll().ma);
+        flightScreenDTO.setAircraftList(aircraftRepository.findAll().stream().map(AircraftDTO::toDTO).toList());
+        flightScreenDTO.setPilotList(pilotRepository.findAll().stream().map(PilotDTO::toPilotDTO).toList());
+        flightScreenDTO.setOrigin(originRepository.findAll().stream().map(OriginDestinationDTO::originDestinationDTO).toList());
+        flightScreenDTO.setOrigin(destinationRepository.findAll().stream().map(OriginDestinationDTO::originDestinationDTO).toList());
 
-
-        return null;
+        return flightScreenDTO;
     }
 
 }
