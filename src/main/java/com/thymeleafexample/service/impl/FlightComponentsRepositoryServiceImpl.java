@@ -45,7 +45,7 @@ public class FlightComponentsRepositoryServiceImpl implements FlightComponentsRe
         flightScreenDTO.setAircraftList(aircraftRepository.findAll().stream().map(AircraftDTO::toDTO).toList());
         flightScreenDTO.setPilotList(pilotRepository.findAll().stream().map(PilotDTO::toPilotDTO).toList());
         flightScreenDTO.setOrigin(originRepository.findAll().stream().map(OriginDestinationDTO::originDestinationDTO).toList());
-        flightScreenDTO.setOrigin(destinationRepository.findAll().stream().map(OriginDestinationDTO::originDestinationDTO).toList());
+        flightScreenDTO.setDestination(destinationRepository.findAll().stream().map(OriginDestinationDTO::originDestinationDTO).toList());
 
         return flightScreenDTO;
     }
