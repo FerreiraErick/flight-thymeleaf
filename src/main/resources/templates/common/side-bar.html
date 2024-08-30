@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
 <div th:fragment="sidebar" class="container-fluid" style="width: 10%">
     <div class="container-fluid d-flex justify-content-center p-3" >
         <img class="img" src="../static/img/logo.png" width="50px" height="50px">
     </div>
     <ul class="nav nav-pills nav-fill flex-column pt-3" >
         <li class="nav-item">
-            <a class="nav-link"  href="home.html" th:href="@{/home}" >Home</a>
+            <a class="nav-link"  href="home.html" th:href="@{/home}" id="home" >Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link"  href="flights.html" th:href="@{/flights}" >Flights</a>
+            <a class="nav-link"  href="flights.html" th:href="@{/flights}" id="flights">Flights</a>
         </li>
         <li class="nav-item">
             <a class="nav-link">Logout</a>
         </li>
     </ul>
+    <script>
+        var pathName = window.location.pathname;
+        var activeElement = document.getElementById(pathName.replace("/", ""));
+
+        if(activeElement){
+            activeElement.setAttribute("class", "nav-link active");
+        }
+    
+    
+    </script>
     <!-- th:classappend="${#httpServletRequest.getRequestURI().startsWith('/home') ? 'active':''}" -->
 </div>
 </html>
