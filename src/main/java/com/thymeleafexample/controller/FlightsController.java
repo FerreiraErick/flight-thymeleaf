@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/flight")
+@RequestMapping()
 public class FlightsController {
 
 
@@ -27,7 +27,7 @@ public class FlightsController {
         return model;
     }
 
-    @GetMapping
+    @GetMapping("/flight")
     public ModelAndView getFlight(ModelAndView modelAndView) {
         FlightScreenDTO flightScreenDTO = flightComponentsRepositoryServiceInterface.fetchFlightScreenData();
 
